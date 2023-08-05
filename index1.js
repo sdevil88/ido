@@ -1,38 +1,28 @@
-let nme = [];
-let subject = [];
-let mark = [];
-let count;
-let i, j;
+const user = {
+    fname: "sagar",
+    lname: "ghimire",
+    email: "wwwghimiresagar88@gmail.com",
+    password: "sagar",
+    userdata: ()=>{
+        return user.fname+user.lname+user.email+user.password;
 
-function getdetails() {
-    let count = prompt("enter student number");
-    for(i=0;i<count;i++)
-    {
-        let names = prompt("enter name");
-        let subjects = prompt("enter subject");
-        let marks = prompt("enter marks");
-        nme.push(names);
-        subject.push(subjects);
-        mark.push(marks);
+    },
+    check : () =>{
+        if(user.password==="sagar")
+        {
+            alert("login");
+        }else{
+            alert("invalid password. please try again");
+            window.location="index.html";
+        }
     }
-    return {name: nme, subject: subject, mark:mark};
+};
+function login() {
+    const enterpw = prompt("enter your password");
+    user.password = enterpw;
+    user.check();
 }
 
 
-//show 
 
-
-function show(details)
-{
-    document.write("student details");
-    for(j=0;j<count;j++)
-    {
-        document.write("<br> name : "+details.nme[j]+"<br> subject : "+details.subject[j]+"<br> marks : "+details.mark[j]);
-    }
-}
-
-
-let me = getdetails();
-show(me);
-
-
+login();
