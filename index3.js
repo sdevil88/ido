@@ -10,13 +10,16 @@ function valid(){
     },
     check: function()
     {
+        
+
+
         if(details.name==="sagar" && details.password==="ghimire")
         {
             alert("login ");
             window.location="index.html";
         }else{
             alert("login failed ");
-            window.location="home.html";
+            return false;
         }
     }
 
